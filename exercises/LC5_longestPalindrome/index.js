@@ -13,18 +13,19 @@ function longestPalindrome(s) {
   function expandAround(left, right) {
     // main equation for finding out if the string porion of for loop is the longest palindrome
     while (left >= 0 && right <= s.length && s[left] == s[right]) {
-      console.log(left, right, s[left], s[right]);
+      console.log(s.length, left, right, s[left], s[right]);
       currentPalindrome = right - left + 1;
       console.log(currentPalindrome);
 
       if (currentPalindrome > maxlength) {
         maxlength = currentPalindrome;
         startindex = left; // confused
-        console.log(maxlength, startindex);
+        console.log(maxlength, startindex, "**");
       }
       left -= 1;
       right += 1;
     }
+    console.log("outside while");
   }
 
   // this goes to each letter from start ;to find out if the longest palindrome exist around this startindex
